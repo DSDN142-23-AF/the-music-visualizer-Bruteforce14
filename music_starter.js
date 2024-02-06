@@ -11,21 +11,14 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    let bar_pos_x = width / 2;
  
 
-   // vocal bar is red
-   fill(200, 0, 0);
-   rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
-   fill(0);
-   text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
- 
    // drum bar is green
    fill(0, 200, 0);
-   rect(bar_pos_x, height / 2 + 2 * bar_spacing, 4 * drum, bar_height);
-   fill(0);
-   text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
+   rect(bar_pos_x, height / 2 + 3 * bar_spacing, width, bar_height+2*drum);
+  
  
    // bass bar is blue
    fill(50, 50, 240);
-   rect(bar_pos_x, height / 2 + 3 * bar_spacing, 4 * bass, bar_height);
+   rect(bar_pos_x, height / 2 + 4 * bar_spacing, width, bar_height+2*bass);
    fill(0);
    text("bass", bar_pos_x, height / 2 + 3 * bar_spacing + 8);
  
@@ -40,4 +33,30 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    textAlign(CENTER);
    textSize(vocal);
    text(words, width/2, height/3);
+}
+
+function drawDrumwave(x,y,s,mStroke,mFill){
+  stroke(mstroke)
+  fill(mfill)
+  strokeWeight(2)
+  beginShape ();
+  vertex(x-s/50*25,y+s/50*25);
+  vertex(x-s/50*17,y+s/50*19);
+  vertex(x+s/50*14,y-s/50*11);
+  vertex(x+s/50*18,y-s/50*8);
+  vertex(x+s/50*19,y-s/50*9);
+  vertex(x+s/50*15,y-s/50*12);
+  vertex(x+s/50*15,y-s/50*13);
+  vertex(x+s/50*22,y-s/50*20);
+  vertex(x+s/50*23,y-s/50*20);
+  vertex(x+s/50*25,y-s/50*25);
+  vertex(x+s/50*20,y-s/50*23);
+  vertex(x+s/50*20,y-s/50*22);
+  vertex(x+s/50*13,y-s/50*15);
+  vertex(x+s/50*12,y-s/50*15);
+  vertex(x+s/50*9,y-s/50*19);
+  vertex(x+s/50*8,y-s/50*18);
+  vertex(x+s/50*11,y-s/50*14);
+  vertex(x-s/50*19,y+s/50*17);
+  endShape(CLOSE);
 }
