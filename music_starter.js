@@ -35,28 +35,4 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    text(words, width/2, height/3);
 }
 
-function drawDrumwave(x,y,s,mStroke,mFill){
-  stroke(mstroke)
-  fill(mfill)
-  strokeWeight(2)
-  beginShape ();
-  vertex(x-s/50*25,y+s/50*25);
-  vertex(x-s/50*17,y+s/50*19);
-  vertex(x+s/50*14,y-s/50*11);
-  vertex(x+s/50*18,y-s/50*8);
-  vertex(x+s/50*19,y-s/50*9);
-  vertex(x+s/50*15,y-s/50*12);
-  vertex(x+s/50*15,y-s/50*13);
-  vertex(x+s/50*22,y-s/50*20);
-  vertex(x+s/50*23,y-s/50*20);
-  vertex(x+s/50*25,y-s/50*25);
-  vertex(x+s/50*20,y-s/50*23);
-  vertex(x+s/50*20,y-s/50*22);
-  vertex(x+s/50*13,y-s/50*15);
-  vertex(x+s/50*12,y-s/50*15);
-  vertex(x+s/50*9,y-s/50*19);
-  vertex(x+s/50*8,y-s/50*18);
-  vertex(x+s/50*11,y-s/50*14);
-  vertex(x-s/50*19,y+s/50*17);
-  endShape(CLOSE);
-}
+
