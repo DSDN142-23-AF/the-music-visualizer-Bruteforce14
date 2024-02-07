@@ -12,8 +12,8 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
  
   background(87, 196, 255);
   fill(77, 70, 54);
-  rect(0,3*height/4,width*2,height/4);
-  image(land,0,100);
+  rect(0,600,width*2,height/4);
+  image(land,0,0);
   textFont('Lobster'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
@@ -22,27 +22,99 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    let bar_height = width / 12;
    let bar_pos_x = width / 2;
  
+   // other bar is white
+   let otherY = 500;
+   let otherYP = otherY + other;
+   let otherYN = otherY - other;
+   strokeWeight(other/10);
+   fill(0, 98, 122);
+   beginShape();
+   curveVertex(-50,700);
+   curveVertex(-50,otherYP);
+   curveVertex(0,otherYP);
+   curveVertex(100,otherYN);
+   curveVertex(200,otherYP);
+   curveVertex(300,otherYN);
+   curveVertex(400,otherYP);
+   curveVertex(500,otherYN);
+   curveVertex(600,otherYP);
+   curveVertex(700,otherYN);
+   curveVertex(800,otherYP);
+   curveVertex(900,otherYN);
+   curveVertex(1000,otherYP);
+   curveVertex(1100,otherYN);
+   curveVertex(1200,otherYP);
+   curveVertex(1300,otherYN);
+   curveVertex(1400,otherYP);
+   curveVertex(1500,otherYN);
+   curveVertex(1600,otherYP);
+   curveVertex(1650,otherYP);
+   curveVertex(1650,700);
+   endShape(CLOSE);
 
+   // bass bar is blue
+   let bassY = 600;
+   let bassYP = bassY - bass;
+   let bassYN = bassY + bass;
+   strokeWeight(bass/10);
+   fill(1, 68, 84);
+   rect(bar_pos_x-5, height / 2 + 4 * bar_spacing, width+50, bar_height+2*bass);
+   beginShape();
+   curveVertex(-50,800);
+   curveVertex(-50,bassYP);
+   curveVertex(75,bassYN);
+   curveVertex(175,bassYP);
+   curveVertex(275,bassYN);
+   curveVertex(375,bassYP);
+   curveVertex(475,bassYN);
+   curveVertex(575,bassYP);
+   curveVertex(675,bassYN);
+   curveVertex(775,bassYP);
+   curveVertex(875,bassYN);
+   curveVertex(975,bassYP);
+   curveVertex(1075,bassYN);
+   curveVertex(1175,bassYP);
+   curveVertex(1275,bassYN);
+   curveVertex(1375,bassYP);
+   curveVertex(1475,bassYN);
+   curveVertex(1575,bassYP);
+   curveVertex(1650,bassYP);
+   curveVertex(1650,800);
+   endShape(CLOSE);
+    
+   
+   
    // drum bar is green
+   let drumY = 700;
+   let drumS = drum;
+   let drumYP = drumY + drum;
+   let drumYN = drumY - drumS;
    stroke(255);
    strokeWeight(drum/10);
    fill(0, 35, 43);
    beginShape();
-   curveVertex();
+   curveVertex(-50,900);
+   curveVertex(-50,drumYP);
+   curveVertex(0,drumYP);
+   curveVertex(100,drumYN);
+   curveVertex(200,drumYP);
+   curveVertex(300,drumYN);
+   curveVertex(400,drumYP);
+   curveVertex(500,drumYN);
+   curveVertex(600,drumYP);
+   curveVertex(700,drumYN);
+   curveVertex(800,drumYP);
+   curveVertex(900,drumYN);
+   curveVertex(1000,drumYP);
+   curveVertex(1100,drumYN);
+   curveVertex(1200,drumYP);
+   curveVertex(1300,drumYN);
+   curveVertex(1400,drumYP);
+   curveVertex(1500,drumYN);
+   curveVertex(1600,drumYP);
+   curveVertex(1650,drumYP);
+   curveVertex(1650,900);
    endShape(CLOSE);
-   rect(bar_pos_x-5, height / 2 + 3 * bar_spacing, width+50, bar_height+2*drum);
-  
- 
-   // bass bar is blue
-   strokeWeight(bass/10);
-   fill(1, 68, 84);
-   rect(bar_pos_x-5, height / 2 + 4 * bar_spacing, width+50, bar_height+2*bass);
-
- 
-   // other bar is white
-   strokeWeight(other/10);
-   fill(0, 98, 122);
-   rect(bar_pos_x-5, height / 2 + 5 * bar_spacing, width+50, bar_height+2*other);
 
  
    // display "words"
@@ -53,4 +125,19 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    text(words, width/2, height/3);
 }
 
-
+function drawSpray(x,y,inst){
+   let dropStartX = [x-36,x-36,x-42,x-48,x-48,x-45,x-43,x-42,x-39,x-35,x-35];
+   let dropStartY = [y-2,y-2,y-4,y,y+7,y+10,y+11,y+14,y+16,y+13,y+13];
+   let morphdropY = []
+   for(let i = 0; i <=dropStartY.length; i++ ){
+   morphdropY[i] = map(1,  0 , 1, humanEarY[i], goblinEarY[i])
+   }
+   let morphEarX = []
+   for(let i = 0; i <=dropStartX.length; i++ ){
+   morphEarX[i] = map(1,  0 , 1, humanEarX[i], goblinEarX[i])
+stroke(255);
+fill(255);
+beginShape();
+curveVertex()
+   }
+}
