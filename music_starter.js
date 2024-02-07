@@ -26,7 +26,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    // drum bar is green
    stroke(255);
    strokeWeight(drum/10);
-   fill(0, 98, 122);
+   fill(0, 35, 43);
+   beginShape();
+   curveVertex();
+   endShape(CLOSE);
    rect(bar_pos_x-5, height / 2 + 3 * bar_spacing, width+50, bar_height+2*drum);
   
  
@@ -38,7 +41,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
  
    // other bar is white
    strokeWeight(other/10);
-   fill(0, 35, 43);
+   fill(0, 98, 122);
    rect(bar_pos_x-5, height / 2 + 5 * bar_spacing, width+50, bar_height+2*other);
 
  
