@@ -137,5 +137,9 @@ stroke(255);
 fill(255);
 beginShape();
 curveVertex();
+curveVertex();
+curveVertex();
+curveVertex();
+endShape(CLOSE);
    }
 }
