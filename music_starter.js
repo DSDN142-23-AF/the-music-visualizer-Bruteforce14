@@ -122,22 +122,20 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    textAlign(CENTER);
    textSize(vocal);
    textFont('Lobster');
-   text(words, width/2, height/3);
+   text(words, width/2, height/5);
 }
 
 function drawSpray(x,y,inst){
-   let dropStartX = [x-36,x-36,x-42,x-48,x-48,x-45,x-43,x-42,x-39,x-35,x-35];
-   let dropStartY = [y-2,y-2,y-4,y,y+7,y+10,y+11,y+14,y+16,y+13,y+13];
    let morphdropY = []
    for(let i = 0; i <=dropStartY.length; i++ ){
-   morphdropY[i] = map(1,  0 , 1, humanEarY[i], goblinEarY[i])
+   morphdropY[i] = map(6,  0 , 1, y+1, y+50)
    }
-   let morphEarX = []
+   let morphDropX = []
    for(let i = 0; i <=dropStartX.length; i++ ){
-   morphEarX[i] = map(1,  0 , 1, humanEarX[i], goblinEarX[i])
+   morphDropX[i] = map(6,  0 , 1,x+1,x+10)
 stroke(255);
 fill(255);
 beginShape();
-curveVertex()
+curveVertex();
    }
 }
